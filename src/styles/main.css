@@ -1,0 +1,189 @@
+/* ====== НИЖНИЙ КОНТЕЙНЕР / FOOTER ====== */
+.footer {
+  background: rgba(11, 13, 21, 0.75);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 2rem 0;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: #a855f7;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #c084fc;
+}
+
+.footer .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.3s;
+  font-size: 1.25rem;
+}
+
+.footer .social-icon:hover {
+  background: rgba(168, 85, 247, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+/* ====== УЛУЧШЕННЫЕ КАРТОЧКИ ====== */
+.glass-card-enhanced {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-enhanced:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+/* ====== НЕОНОВЫЕ КНОПКИ ====== */
+.neon-btn {
+  background: transparent;
+  border: 1px solid #a855f7;
+  color: #a855f7;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.neon-btn:hover::before {
+  left: 100%;
+}
+
+.neon-btn:hover {
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25), inset 0 0 20px rgba(168, 85, 247, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ===== = ЗАГОЛОВКИ С ГРАДИЕНТОМ ====== */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c084fc, #818cf8, #6c47ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* ====== АДАПТИВНЫЙ КОНТЕЙНЕР ====== */
+.content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .content-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+/* ====== АНИМАЦИЯ ПОЯВЛЕНИЯ ====== */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideUpFade 0.5s ease-out forwards;
+}
+
+.animate-in-delay-1 {
+  animation: slideUpFade 0.5s ease-out 0.1s forwards;
+}
+
+.animate-in-delay-2 {
+  animation: slideUpFade 0.5s ease-out 0.2s forwards;
+}
+
+/* ====== ДОПОЛНИТЕЛЬНЫЕ ТЕНИ ====== */
+.text-glow {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+.box-glow {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.1), 0 0 60px rgba(108, 71, 255, 0.05);
+}
+
+/* ====== СТИЛИ ДЛЯ ФИЛЬТРОВ ====== */
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.filter-tag:hover {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.filter-tag.active {
+  background: linear-gradient(135deg, #6c47ff, #a855f7);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ====== СТАТУС БАР (уведомления) ====== */
+.status-bar {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(11, 13, 21, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  color: #d1d5db;
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+}
