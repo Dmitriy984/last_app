@@ -36,9 +36,10 @@ export default function Home() {
         )}
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-white">🔥 Лучшие рейтинги</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {trending.map(m => <MovieCard key={m.id} movie={m} />)}
-          </div>
+         <div className="movie-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+  {trending.map(m => <MovieCard key={m.id} movie={m} />)}
+</div>
+
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-6 text-white">🎭 Жанры</h2>
