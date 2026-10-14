@@ -1,45 +1,25 @@
 .movie-card {
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              box-shadow 0.35s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: block;             
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.movie-card a {
+  text-decoration: none;
 }
 
 .movie-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
-              0 0 30px rgba(168, 85, 247, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.1);
 }
 
-.movie-card:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.badge {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.25s;
-}
-
-.movie-card:hover .badge {
-  border-color: rgba(168, 85, 247, 0.3);
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.rating {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 215, 0, 0.15);
-  color: #fbbf24;
-  font-weight: 700;
-}
-
-.movie-card:hover .rating {
-  border-color: rgba(255, 215, 0, 0.3);
-  box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
-}
-
-.fav-btn {
-  background: rgba(0, 0, 0, 0.4);
+.movie-card .fav-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;            
+  background: rgba(0,0,0,0.4);
   backdrop-filter: blur(4px);
   border-radius: 50%;
   width: 32px;
@@ -47,63 +27,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
+  border: 1px solid rgba(255,255,255,0.1);
   transition: all 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.fav-btn:hover {
+.movie-card .fav-btn:hover {
   transform: scale(1.2);
+  background: rgba(168,85,247,0.2);
+  border-color: rgba(168,85,247,0.3);
+}
+.movie-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.ivi-card {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.25s;
+}
+
+.ivi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.15);
+}
+
+.ivi-card:active {
+  transform: scale(0.97);
+}
+
+.ivi-card .absolute.inset-x-0.bottom-0 {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 100%);
+  pointer-events: none;
+}
+
+.ivi-card h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.ivi-card .badge {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ivi-card .fav-btn {
+  transition: all 0.2s;
+}
+
+.ivi-card .fav-btn:hover {
+  transform: scale(1.15);
   background: rgba(168, 85, 247, 0.2);
-  border-color: rgba(168, 85, 247, 0.3);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
 }
 
-.fav-btn.active {
+.ivi-card .fav-btn.active {
   background: rgba(168, 85, 247, 0.3);
-  border-color: #a855f7;
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  color: #a855f7;
 }
 
-.card-info {
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(2px);
+.ivi-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
 }
 
-.movie-card:hover .card-info {
-  background: rgba(255, 255, 255, 0.05);
-  border-top-color: rgba(168, 85, 247, 0.15);
+@media (max-width: 640px) {
+  .ivi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
 }
 
-.meta span {
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-.movie-card:hover .meta span {
-  opacity: 1;
-}
-
-
-.movie-card {
-  display: block;
-  background: #1a1a2e;
-  border: 1px solid #333;
-  border-radius: 12px;
-  overflow: hidden;
-  color: #fff;
-}
-.movie-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.card-info {
-  padding: 0.75rem;
-}
-
-.movie-card img {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  min-height: 200px;
+@media (min-width: 1024px) {
+  .ivi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
